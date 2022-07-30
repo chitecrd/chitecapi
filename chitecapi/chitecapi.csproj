@@ -355,6 +355,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Certificates.cs" />
+    <Compile Include="Controllers\FidelizacionesController.cs" />
     <Compile Include="Controllers\TransferStockInController.cs" />
     <Compile Include="Controllers\TransferStockController.cs" />
     <Compile Include="Controllers\ArticulosController.cs" />
@@ -451,6 +452,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Fidelizaciones\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -168,8 +168,6 @@ namespace chitecapi.Controllers
 
             dataUtil.Connect();
 
-
-
             var sql = ConfigurationManager.AppSettings["getarticulos_ubicacion"];
 
             if (sql == null)
