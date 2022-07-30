@@ -1,0 +1,10 @@
+[
+  {
+    "nombre" : "iswar",
+    "apellido" : "apellido",
+    "usuario" : "usuario",
+    "password" : "123",
+    "estado" : 1,
+    "tipo_usuario" : 1
+  }
+]

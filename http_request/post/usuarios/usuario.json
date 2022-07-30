@@ -1,0 +1,16 @@
+[
+  {
+    "nombre" : "Henry",
+    "apellido" : "apellido",
+    "usuario" : "admin",
+    "password" : "admin",
+    "estado" : 1
+  },
+  {
+    "nombre" : "Marc",
+    "apellido" : "apellido",
+    "usuario" : "admin",
+    "password" : "admin",
+    "estado" : 1
+  }
+]

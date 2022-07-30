@@ -1,0 +1,22 @@
+[
+  {
+    "BusinessName" : "China",
+    "CardCode" : "789456",
+    "CardName" : "tarjeta",
+    "CardType" : "tipo",
+    "Notes" : "notas",
+    "FederalTaxId": 1,
+    "Currency": "USD",
+    "VatLiable": "Liable"
+  },
+  {
+    "BusinessName" : "Baldom",
+    "CardCode" : "546456",
+    "CardName" : "tarjeta",
+    "CardType" : "tipo",
+    "Notes" : "notas",
+    "FederalTaxId": 1,
+    "Currency": "USD",
+    "VatLiable": "Liable"
+  }
+]

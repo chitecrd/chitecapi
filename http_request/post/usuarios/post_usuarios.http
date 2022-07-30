@@ -1,0 +1,18 @@
+// Variables
+@controller = usuarios
+@contentType = application/json
+@dbAlias = 
+
+###
+// Guardar usuarios
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./usuario.json
+
+###
+// Editar usuarios
+post {{chitecApiBaseUrl}}/{{controller}}/editar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./usuario_editado.json

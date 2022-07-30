@@ -1,0 +1,22 @@
+[
+  {
+    "fecha": "2021-09-02",
+    "id_orden_compra": "abc",
+    "id_contenedor": "id_contenedor",
+    "numero_factura": "numero_factura",
+    "comentario": "comentario",
+    "id_usuario": 1,
+    "detalles": [
+      {
+        "no_articulo": "code",
+        "cantidad": 4.0,
+        "id_ubicacion": "A01A"
+      },
+      {
+        "no_articulo": "codes",
+        "cantidad": 1.0,
+        "id_ubicacion": "A01A"
+      }
+    ]
+  }
+]

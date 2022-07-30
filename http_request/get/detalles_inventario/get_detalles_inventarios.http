@@ -1,0 +1,8 @@
+// Variables
+@controller = Detalles_Inventarios
+@contentType = application/json
+@dbAlias = 
+
+
+###
+get {{chitecApiBaseUrl}}/{{controller}}/get_almacen_tienda?db={{dbAlias}} HTTP/1.1

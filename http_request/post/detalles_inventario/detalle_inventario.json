@@ -1,0 +1,54 @@
+[
+  {
+    "id_terminal":"B4CTTPC257fadsP2345",
+    "no_detalleInv":"999",
+    "no_articulo":"3",
+    "id_ubicacion":"1",
+    "cantidad":"10",
+    "fecha_registro":"2020-07-04 14:57:45",
+    "fecha_modificacion":"2020-07-04 14:57:45",
+    "id_usuario_registro":"1",
+    "id_usuario_modificacion":"1",
+    "codigo_barra" : "codigo_barra",
+    "codigo_capturado" : "codigo_capturado"     
+  },
+  {
+    "id_terminal":"B4CTTPCfadsf573P2388",
+    "no_detalleInv":"690",
+    "no_articulo":"2",
+    "id_ubicacion":"1",
+    "cantidad":"10",
+    "fecha_registro":"2020-07-04 14:57:45",
+    "fecha_modificacion":"2020-07-04 14:57:45",
+    "id_usuario_registro":"1",
+    "id_usuario_modificacion":"1",
+    "codigo_barra" : "codigo_barra",
+    "codigo_capturado" : "codigo_capturado"     
+  },
+  {
+    "id_terminal":"B4CTTPCqrew73P2388",
+    "no_detalleInv":"690",
+    "no_articulo":"2",
+    "id_ubicacion":"1",
+    "cantidad":"10",
+    "fecha_registro":"2020-07-04 14:57:45",
+    "fecha_modificacion":"2020-07-04 14:57:45",
+    "id_usuario_registro":"1",
+    "id_usuario_modificacion":"1",
+    "codigo_barra" : "codigo_barra",
+    "codigo_capturado" : "codigo_capturado"     
+  },
+  {
+    "id_terminal":"B4CTfdsf573P2388",
+    "no_detalleInv":"690",
+    "no_articulo":"2",
+    "id_ubicacion":"1",
+    "cantidad":"10",
+    "fecha_registro":"2020-07-04 14:57:45",
+    "fecha_modificacion":"2020-07-04 14:57:45",
+    "id_usuario_registro":"1",
+    "id_usuario_modificacion":"1",
+    "codigo_barra" : "codigo_barra",
+    "codigo_capturado" : "codigo_capturado"     
+  }
+]

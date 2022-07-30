@@ -1,0 +1,9 @@
+// Variables
+@controller = BusinessPartners
+@contentType = application/json
+@dbAlias = 
+
+###
+// Listado BusinessPartners
+get {{chitecApiBaseUrl}}/{{controller}}/listado?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}

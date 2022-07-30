@@ -1,0 +1,39 @@
+// Variables
+@controller = detalles_inventarios
+@contentType = application/json
+@dbAlias = dbconnection
+
+###
+// Guardar detalles de invertario
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./detalle_inventario.json
+
+###
+// Editar detalles de invertario
+post {{chitecApiBaseUrl}}/{{controller}}/editar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./detalle_inventario_editado.json
+
+###
+// Actualizar cantidad de detalles de invertario
+post {{chitecApiBaseUrl}}/{{controller}}/editar_cantidad?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./editar_cantidad.json
+
+###
+// Editar auditoría
+post {{chitecApiBaseUrl}}/{{controller}}/editar_info_auditoria?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./editar_info_auditoria.json
+
+###
+// Asignar auditor manualmente
+post {{chitecApiBaseUrl}}/{{controller}}/editar_info_auditoria_manual?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./editar_info_auditoria_manual.json

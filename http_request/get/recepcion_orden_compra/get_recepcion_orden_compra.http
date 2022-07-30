@@ -1,0 +1,13 @@
+// Variables
+@controller = Recepcion_Orden_Compra
+@contentType = application/json
+@dbAlias = 
+@recepcionOrdenCompra = 16
+@ordenCompra = abc
+@fechaInicial = 2021-09-02
+@fechaFinal = 2021-09-03
+@articulo = code
+@ubicacion = A01A
+
+###
+get {{chitecApiBaseUrl}}/{{controller}}/buscar/?id_recepcion_orden_compra={{recepcionOrdenCompra}}&id_orden_compra={{ordenCompra}}&fecha_inicial={{fechaInicial}}&fecha_final={{fechaFinal}}&no_articulo={{articulo}}&id_ubicacion={{ubicacion}}&db={{dbAlias}} HTTP/1.1

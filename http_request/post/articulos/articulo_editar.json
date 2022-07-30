@@ -1,0 +1,17 @@
+[
+  {
+    "no_articulo" : "2",
+    "codigo_barra" : "codigo_barra",
+    "alterno1" : "alterno1",
+    "alterno2" : "alterno2",
+    "alterno3" : "alterno3",
+    "descripcion" : "descripcion",
+    "existencia" : 1,
+    "unidad_medida" : "unidad_medida",
+    "costo" : 3,
+    "precio" : 3,
+    "referencia" : "referencia",
+    "marca" : "toyota",
+    "familia" : "camion"
+  }
+]

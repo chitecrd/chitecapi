@@ -1,0 +1,19 @@
+// Variables
+@baseUrl = http://localhost:58321/api
+@controller = ubicaciones
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Guardar ubicaciones
+post {{baseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./ubicacion.json
+
+###
+// Editar ubicaciones
+post {{baseUrl}}/{{controller}}/editar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./ubicacion_editada.json

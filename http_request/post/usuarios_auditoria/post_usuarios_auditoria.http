@@ -1,0 +1,11 @@
+// Variables
+@controller = usuarios_auditoria
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Guardar usuarios de auditoría
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./usuario_auditoria.json

@@ -1,0 +1,18 @@
+// Variables
+@controller = detalle_inventario_ciclico
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Asignar fecha
+post {{chitecApiBaseUrl}}/{{controller}}/asignar_fechas?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./asignar_fecha.json
+
+###
+// Actualizar conteo
+post {{chitecApiBaseUrl}}/{{controller}}/actualizar_conteo?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./actualizar_conteo.json

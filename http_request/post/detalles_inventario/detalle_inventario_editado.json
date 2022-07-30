@@ -1,0 +1,14 @@
+[
+  {	
+    "no_articulo" : "2",
+    "id_terminal" :  "03-87C3312B890F2CC6-FFFFFFFF9B2812E4",
+    "no_detalleInv" : "1",
+    "id_ubicacion" : 6,
+    "cantidad" : 133,
+    "codigo_barra" : "codigo_barra",
+    "fecha_registro":"2020-07-04 14:57:45",
+    "fecha_modificacion":"2020-07-04 14:57:45",
+    "id_usuario_registro":"1",
+    "id_usuario_modificacion":"1"
+  }  
+]

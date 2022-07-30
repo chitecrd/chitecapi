@@ -1,0 +1,18 @@
+// Variables
+@controller = clasificacion
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Guardar clasificación
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./clasificacion.json
+
+###
+// Editar clasificación
+post {{chitecApiBaseUrl}}/{{controller}}/editar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./clasificacion_editar.json

@@ -1,0 +1,11 @@
+{
+  "id" : 1,
+  "estado" : 2,
+  "no_detalleinv_ciclico" : "no_detalleinv_ciclico",
+  "id_terminal" :  "id_terminal",
+  "cantidad" : 1,
+  "diferencia_valor_absoluto" : 1,
+  "id_usuario_registro" : 1,
+  "fecha_registro" : "2020-09-02",
+  "porcentaje_tolerancia" : 2
+}

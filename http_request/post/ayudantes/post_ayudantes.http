@@ -1,0 +1,11 @@
+// Variables
+@controller = ayudantes
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Guardar ayudantes
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./ayudante.json

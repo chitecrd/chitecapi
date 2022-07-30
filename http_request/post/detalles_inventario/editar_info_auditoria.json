@@ -1,0 +1,12 @@
+[
+  {
+    "id" : 8,
+    "pre_conteo" : 1,
+    "cantidad_auditada" : 1,
+    "diferencia" : 1,
+    "porcentaje_diferencia" : 1,
+    "id_tipo_error" : 1,
+    "notas" : "notas",
+    "id_tipo_auditoria" : 1
+  }	
+]

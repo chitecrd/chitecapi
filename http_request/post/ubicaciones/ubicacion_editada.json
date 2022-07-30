@@ -1,0 +1,9 @@
+[
+  {
+    "id" : 20,
+    "descripcion" : "descripcion",
+    "cod_alterno" : "codio",
+    "estado" : 1,
+    "id_tipo_ubicacion" : 1
+  }	
+]

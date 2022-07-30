@@ -1,0 +1,96 @@
+[
+  {
+    "DocNum": "abc",
+    "DocDate": "2021-07-22",
+    "DocDueDate": "2021-07-30",
+    "CardName": "cardName",
+    "NumAtCard": "xyz",
+    "DocRate": 1,
+    "JournalMemo": "memo",
+    "TaxDate": "2021-07-30",
+    "DocTotalFc": 1,
+    "DocTotalSys": 1.3,
+    "DocumentStatus": "completada",
+    "U_NCF": "123456789",
+    "TotalLines": 2,
+    "Details": [
+      {
+        "LineNum": 1,
+        "ItemCode": "code",
+        "ItemDescription": "description",
+        "Quantity": 2,
+        "Costo_Unitario": 20,
+        "BarCode": "code",
+        "UoMCode": "cpde",
+        "LineStatus": "pendiente",
+        "UserName": "user",
+        "WarehouseCode": "cpde",
+        "BinLocation": "location",
+        "Costo_Total": 50,
+        "Itbis": 18.2
+      },
+      {
+        "LineNum": 2,
+        "ItemCode": "codes",
+        "ItemDescription": "description",
+        "Quantity": 2,
+        "Costo_Unitario": 20,
+        "BarCode": "code",
+        "UoMCode": "cpde",
+        "LineStatus": "pendiente",
+        "UserName": "user",
+        "WarehouseCode": "cpde",
+        "BinLocation": "location",
+        "Costo_Total": 50,
+        "Itbis": 17.2
+      }
+    ]
+  },
+  {
+    "DocNum": "def",
+    "DocDate": "2021-07-22",
+    "DocDueDate": "2021-07-30",
+    "CardName": "cardName",
+    "NumAtCard": "sos",
+    "DocRate": 1,
+    "JournalMemo": "memo",
+    "TaxDate": "2021-07-30",
+    "DocTotalFc": 1,
+    "DocTotalSys": 1.3,
+    "DocumentStatus": "completada",
+    "U_NCF": "123456789",
+    "TotalLines": 2,
+    "Details": [
+      {
+        "LineNum": 1,
+        "ItemCode": "code",
+        "ItemDescription": "description",
+        "Quantity": 2,
+        "Costo_Unitario": 20,
+        "BarCode": "code",
+        "UoMCode": "cpde",
+        "LineStatus": "pendiente",
+        "UserName": "user",
+        "WarehouseCode": "cpde",
+        "BinLocation": "location",
+        "Costo_Total": 50,
+        "Itbis": 219.2
+      },
+      {
+        "LineNum": 2,
+        "ItemCode": "codes",
+        "ItemDescription": "description",
+        "Quantity": 2,
+        "Costo_Unitario": 20,
+        "BarCode": "code",
+        "UoMCode": "cpde",
+        "LineStatus": "pendiente",
+        "UserName": "user",
+        "WarehouseCode": "cpde",
+        "BinLocation": "location",
+        "Costo_Total": 50,
+        "Itbis": 118.2
+      }
+    ]
+  }
+]

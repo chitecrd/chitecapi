@@ -1,0 +1,9 @@
+// Variables
+@controller = Asignaciones
+@contentType = application/json
+@dbAlias = 
+@idUsuario = 8
+
+
+###
+get {{chitecApiBaseUrl}}/{{controller}}/?db={{dbAlias}}&id_usuario={{idUsuario}} HTTP/1.1

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>todo.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="recepcion-ordenes-de-compra">Recepcion Ordenes de Compra</h2>
+<h3 id="tabla-recepcionordencompra">Tabla Recepcion_orden_compra</h3>
+<ul>
+<li>id identity int pk</li>
+<li>fecha datetime2 not null</li>
+<li>id_orden_compra varchar(100) fk (orden_compra) not null</li>
+<li>fecha_registro datetime2 not null d: currentdate</li>
+<li>id_contenedor varachar(100) null</li>
+<li>numero_factura varchar(100) null</li>
+<li>comentario varchar(max) null</li>
+<li>id_usuario int null fk (usuarios)</li>
+</ul>
+<h3 id="detallerecepcion">Detalle_recepcion</h3>
+<ul>
+<li>id identity int pk</li>
+<li>id_recepcion (recepciones_ordenes) fk not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+<li>id_ubicacion varchar(10) not null fk (ubicaciones)</li>
+</ul>
+<h3 id="post">Post</h3>
+<ul>
+<li>[] Crear Recepción ordenes ()
+<ul>
+<li>Verificar cantidades e itemes</li>
+<li>verificación de cantidad (colocar estados)
+<ul>
+<li>Cambiar estados en orden de compran
+<ul>
+<li>faltan: backorder</li>
+<li>sobra: excendente</li>
+<li>completo: completada</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>    [{
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_orden_compra"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_contenedor"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"numero_factura"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"comentario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"usuario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"detalle"</span>: <span class="hljs-string">""</span>{
+        <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+        <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>,
+        <span class="hljs-attr">"id_ubicacion"</span>: <span class="hljs-string">"l;aksjfd"</span>
+     }
+  }]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">Get</h3>
+<ul>
+<li>[] buscar por: numero_orden, numero_recepcion, numero_articulo, ubicacion, rango fecha (crear dinamico)</li>
+</ul>
+<h2 id="transferencia-de-localizacion">Transferencia de localizacion</h2>
+<h3 id="tablas">tablas</h3>
+<ul>
+<li>[] transferencia_localizacion
+<ul>
+<li>id int identity pk not null</li>
+<li>fecha datetime2 not null</li>
+<li>id_usuario fk (usuarios) null</li>
+<li>fecha_registro not null currentdate datetime2</li>
+</ul>
+</li>
+<li>[] detalle_transferencia_localizacion
+<ul>
+<li>id int pk not null identity</li>
+<li>id_transferencia int not null fk</li>
+<li>ubicacion_inicial varchar(10) not null</li>
+<li>ubicacion_final varchar(10) not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+</ul>
+</li>
+</ul>
+<h3 id="post">post</h3>
+<ul>
+<li>[] Crear transferencia de localizacion<pre class="hljs"><code><div>[
+  {
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">"2021-09-01"</span>,
+    <span class="hljs-attr">"id_usuario"</span>: <span class="hljs-string">"5"</span>,
+    <span class="hljs-attr">"detalle"</span>: {
+      <span class="hljs-attr">"ubicacion_inicial"</span>: <span class="hljs-string">"ajdf"</span>,
+      <span class="hljs-attr">"ubicacion_final"</span>: <span class="hljs-string">"asdf"</span>,
+      <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+      <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>
+    }
+  }
+]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">get</h3>
+<ul>
+<li>[] buscar por: fecha, no_articulo, ubicacion_inicial, ubicacion_final (crear dinamico)</li>
+</ul>
+<h2 id="transferencia-de-almacen">Transferencia de almacen</h2>
+<h3 id="tablas">tablas</h3>
+<ul>
+<li>[] transferencia_almacen
+<ul>
+<li>id int identity pk not null</li>
+<li>fecha datetime2 not null</li>
+<li>id_usuario fk (usuarios) null</li>
+<li>fecha_registro not null currentdate datetime2</li>
+<li>status not null varchar(50) defecto pendiente</li>
+<li>id_almacen_inicial int not null fk (almacen)</li>
+<li>id_almacen_final int not null fk (almacen)</li>
+</ul>
+</li>
+<li>[] detalle_transferencia_almacen
+<ul>
+<li>id int pk not null identity</li>
+<li>id_transferencia_almacen fk int not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+</ul>
+</li>
+</ul>
+<h3 id="post">post</h3>
+<ul>
+<li>[] Crear transferencia de almacen<pre class="hljs"><code><div>[
+  {
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">"2021-09-01"</span>,
+    <span class="hljs-attr">"id_usuario"</span>: <span class="hljs-string">"5"</span>,
+    <span class="hljs-attr">"id_alamcen_inicial"</span>: <span class="hljs-string">"ajdf"</span>,
+    <span class="hljs-attr">"id_almacen_final"</span>: <span class="hljs-string">"asdf"</span>,
+    <span class="hljs-attr">"detalle"</span>: {
+      <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+      <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>
+    }
+  }
+]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">get</h3>
+<ul>
+<li>[] buscar por: fecha, no_articulo, id_almacen_inicial, id_almacen_final, status, id_transferencia_almacen (crear dinamico)</li>
+</ul>
+<h2 id="picking-de-trandferencia-de-almacen">Picking de trandferencia de almacen</h2>
+<h3 id="tabla-pickingtransferenciaalmacen">tabla picking_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>fecha datetime2 not null</li>
+<li>id_tranferencia_almacen int fk (tranfrenciaalmacen) not null</li>
+<li>fecha_registro datetime2 not null d: currentdate</li>
+<li>id_usuario int null fk (usuarios)</li>
+</ul>
+<h3 id="tabla-detallepickingtransferenciaalmacen">tabla detalle_picking_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>id_transferencia_almacen fk not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+<li>id_ubicacion varchar(10) not null fk (ubicaciones)</li>
+</ul>
+<h3 id="post">post</h3>
+<ul>
+<li>[] Crear picking
+<ul>
+<li>Verificar itemes</li>
+</ul>
+<pre class="hljs"><code><div>    [{
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_transferencia_almacen"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_usuario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"detalle"</span>: <span class="hljs-string">""</span>{
+        <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+        <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>,
+        <span class="hljs-attr">"id_ubicacion"</span>: <span class="hljs-string">"l;aksjfd"</span>
+     }
+  }]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">get</h3>
+<ul>
+<li>[] por id_transferencia, fecha, ubicacion, no_articulo (dinámico)</li>
+</ul>
+<h2 id="shipping-de-transferencia-de-almacen">Shipping de transferencia de almacen</h2>
+<h3 id="tabla-shippingtransferenciaalmacen">tabla shipping_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>fecha datetime2 not null</li>
+<li>id_tranferencia_almacen int fk (tranfrenciaalmacen) not null</li>
+<li>fecha_registro datetime2 not null d: currentdate</li>
+<li>id_usuario int null fk (usuarios)</li>
+<li>id_contenedor varchar(100) null</li>
+<li>comentario varchar(max) null</li>
+</ul>
+<h3 id="tabla-detalleshippingtransferenciaalmacen">tabla detalle_shipping_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>id_shipping fk not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+</ul>
+<h3 id="post">post</h3>
+<ul>
+<li>[] Crear shipping
+<ul>
+<li>Verificar itemes</li>
+<li>verificación de cantidad (colocar estados)
+<ul>
+<li>Cambiar estados en orden de transferencia
+<ul>
+<li>faltan: envio parcial</li>
+<li>completo: pendiente de recepcion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>verificacion de la cantidad recogida</li>
+</ul>
+<pre class="hljs"><code><div>    [{
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_transferencia_almacen"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_usuario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_contenedor"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"comentario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"detalle"</span>: <span class="hljs-string">""</span>{
+        <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+        <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>
+     }
+  }]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">get</h3>
+<p>por id_transferencia, fecha, ubicacion, no_articulo (dinámico)</p>
+<h2 id="recepcion-transferencia-de-almacen">recepcion transferencia de almacen</h2>
+<h3 id="tabla-recepciontransferenciaalmacen">Tabla Recepcion_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>fecha datetime2 not null</li>
+<li>id_transferencia_alamcen varchar(100) fk not null</li>
+<li>fecha_registro datetime2 not null d: currentdate</li>
+<li>id_contenedor varachar(100) null</li>
+<li>comentario varchar(max) null</li>
+<li>id_usuario int null fk (usuarios)</li>
+</ul>
+<h3 id="detallerecepciontransferenciaalmacen">Detalle_recepcion_transferencia_almacen</h3>
+<ul>
+<li>id identity int pk</li>
+<li>id_recepcion_transferencia_almacen fk not null</li>
+<li>no_articulo varchar(max) not null</li>
+<li>cantidad float not null</li>
+<li>id_ubicacion varchar(10) not null fk (ubicaciones)</li>
+</ul>
+<h3 id="post">Post</h3>
+<ul>
+<li>[] Crear Recepción de transferencia de almacen
+<ul>
+<li>Verificar cantidades e itemes</li>
+<li>verificación de cantidad (colocar estados)
+<ul>
+<li>Cambiar estados en transferencia de almacen
+<ul>
+<li>faltan: recepcion parcial</li>
+<li>completo: completada</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>    [{
+    <span class="hljs-attr">"fecha"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_transferencia_alamcen"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"id_contenedor"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"comentario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"usuario"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"detalle"</span>: <span class="hljs-string">""</span>{
+        <span class="hljs-attr">"no_articulo"</span>: <span class="hljs-string">"asdf"</span>,
+        <span class="hljs-attr">"cantidad"</span>: <span class="hljs-string">"4"</span>,
+        <span class="hljs-attr">"id_ubicacion"</span>: <span class="hljs-string">"l;aksjfd"</span>
+     }
+  }]
+</div></code></pre>
+</li>
+</ul>
+<h3 id="get">Get</h3>
+<ul>
+<li>[] buscar por: id_transferencia_almacen, numero_recepcion, numero_articulo, ubicacion, rango fecha (crear dinamico)</li>
+</ul>
+<h2 id="clientes">Clientes</h2>
+<h3 id="tabla">tabla</h3>
+<p>inventatela</p>
+<h2 id="pedido">pedido</h2>
+<h3 id="tabla-2-tablas">tabla (2 tablas)</h3>
+<p>igual que orden de compran, cambiando cardName y numatcard por id_cliente</p>
+<h3 id="post">post</h3>
+<ul>
+<li>[] crear (igual que orden de compra)</li>
+</ul>
+<h3 id="get">get</h3>
+<ul>
+<li>[] buscar (igual que orden de compra)</li>
+</ul>
+<h2 id="picking-de-pedido">Picking de pedido</h2>
+<p>Crear tablas, post, gets relacionado a pedido y no a transferencia</p>
+<h2 id="shipping-de-pedido">Shipping de pedido</h2>
+<p>Crear tablas, post, gets relacionado a pedido y no a transferencia</p>
+<h2 id="recepcion-de-pedido">recepcion de pedido</h2>
+<p>Crear tablas, post, gets relacionado a pedido y no a transferencia</p>
+
+</body>
+</html>

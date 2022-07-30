@@ -1,0 +1,10 @@
+// Variables
+@controller = PurchaseOrder
+@contentType = application/json
+@dbAlias = 
+@status = pendiente
+
+###
+// Listado Orden de compra
+get {{chitecApiBaseUrl}}/{{controller}}/listado?status={{status}}&db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}

@@ -1,0 +1,8 @@
+// Variables
+@controller = Ayudantes
+@contentType = application/json
+@dbAlias = 
+
+
+###
+get {{chitecApiBaseUrl}}/{{controller}}/?db={{dbAlias}} HTTP/1.1

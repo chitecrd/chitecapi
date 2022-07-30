@@ -1,0 +1,11 @@
+// Variables
+@controller = PurchaseOrder
+@contentType = application/json
+@dbAlias = 
+
+###
+// Editar Orden de compra
+post {{chitecApiBaseUrl}}/{{controller}}/editar_pendiente/?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./editar_purchase_order.json

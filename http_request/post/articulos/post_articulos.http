@@ -1,0 +1,25 @@
+// Variables
+@controller = articulos
+@contentType = application/json
+@dbAlias = db1
+
+###
+// Guardar los articulos al servidor
+post {{chitecApiBaseUrl}}/{{controller}}/guardar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./articulo.json
+
+###
+// Editar los articulos del servidor
+post {{chitecApiBaseUrl}}/{{controller}}/editar?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./articulo_editar.json
+
+###
+// Importar Artículos (Excel)
+post {{chitecApiBaseUrl}}/{{controller}}/importar_excel_articulos?db={{dbAlias}} HTTP/1.1
+Content-Type: {{contentType}}
+
+< ./importar_excel.json
