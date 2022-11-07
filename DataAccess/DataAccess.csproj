@@ -131,6 +131,7 @@
     <Compile Include="Models\PickingDetail.cs" />
     <Compile Include="Models\PickingHeaderPatch.cs" />
     <Compile Include="Models\PickingHeader.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Saplogin.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\ArticulosUbicaciones.cs" />

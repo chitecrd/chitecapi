@@ -355,6 +355,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Certificates.cs" />
+    <Compile Include="Controllers\Consulta_AzureController.cs" />
     <Compile Include="Controllers\FidelizacionesController.cs" />
     <Compile Include="Controllers\TransferStockInController.cs" />
     <Compile Include="Controllers\TransferStockController.cs" />
