@@ -76,6 +76,7 @@ namespace chitecapi.Controllers
         public async Task<IHttpActionResult> Get(Int64 codigo, int sucursal = 1, int Nivel = 4, int Factor = 1)
         {
             string endpoint = ConfigurationManager.AppSettings["consultaazure"];
+            
             endpoint = endpoint
                 .Replace("{sucursal}", sucursal.ToString())
                 .Replace("{nivel}", Nivel.ToString())
