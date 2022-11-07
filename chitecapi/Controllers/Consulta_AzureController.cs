@@ -15,7 +15,6 @@ namespace chitecapi.Controllers
 {
     public class Consulta_AzureController : ApiController
     {
-
         /// <summary>
         /// Obtine un producto
         /// </summary>
