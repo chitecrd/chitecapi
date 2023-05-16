@@ -19,7 +19,6 @@ namespace chitecapi.Controllers
         /// Obtine un producto
         /// </summary>
         /// <param name="codigo" example="7460103900141">Codigo</param>
-        /// <param name="sucursal" example="1">Sucursal</param>
         /// <param name="Nivel" example="4">Nivel</param>
         /// <param name="Factor" example="1">Factor</param>
         /// <remarks>
@@ -73,18 +72,15 @@ namespace chitecapi.Controllers
         ///     }
         /// </remarks>
         [HttpGet]
-        public async Task<IHttpActionResult> Get(Int64 codigo, int sucursal = 1, int Nivel = 4, int Factor = 1)
+        public async Task<IHttpActionResult> Get(string codigo)
         {
             string endpoint = ConfigurationManager.AppSettings["consultaazure"];
             
-            endpoint = endpoint
-                .Replace("{sucursal}", sucursal.ToString())
-                .Replace("{nivel}", Nivel.ToString())
-                .Replace("{factor}", Factor.ToString());
-
             var producto = new Producto();
 
             HttpClient http = new HttpClient();
+
+            string url = endpoint + codigo;
 
             string data = await http.GetStringAsync(endpoint + codigo);
 

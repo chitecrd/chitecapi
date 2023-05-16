@@ -8,43 +8,46 @@ namespace DataAccess.Models
 {
     public class Producto
     {
-        public int sec { get; set; }
-        public string codigo { get; set; }
-        public string codBar { get; set; }
-        public string cod_Fab { get; set; }
-        public object comentario { get; set; }
-        public string descripcion { get; set; }
-        public string und { get; set; }
-        public int empaque { get; set; }
-        public string detalle { get; set; }
-        public bool itbis { get; set; }
-        public double porITBIS { get; set; }
-        public int precio { get; set; }
-        public int precioOferta { get; set; }
-        public double costo { get; set; }
-        public int precioLista { get; set; }
-        public int xMayor1 { get; set; }
-        public double xMayor2 { get; set; }
-        public double xMayor3 { get; set; }
-        public double precioMinimo { get; set; }
-        public int enOferta { get; set; }
-        public int areaID { get; set; }
-        public int dptoID { get; set; }
-        public int grupoID { get; set; }
-        public string area { get; set; }
-        public string dpto { get; set; }
-        public object grupo { get; set; }
-        public string foto { get; set; }
-        public int inventario { get; set; }
-        public bool pesado { get; set; }
-        public int addCantidad { get; set; }
-        public int quantity { get; set; }
-        public int agregado { get; set; }
-        public string descripcionLarga { get; set; }
-        public string codigoJuntos { get; set; }
-        public string codigoJuntos1 { get; set; }
-        public List<string> fotosAlterna { get; set; }
-        public object productosLink { get; set; }
-        public int link { get; set; }
+        public Int64 Sec { get; set; }
+        public String Codigo { get; set; }
+        public String CodBar { get; set; }
+        public String Cod_Fab { get; set; }
+        public String Comentario { get; set; }
+        public String Descripcion { get; set; }
+        public String UND { get; set; }
+        public double Empaque { get; set; }
+        public String Detalle { get; set; }
+        public Boolean ITBIS { get; set; }
+        public Double PorITBIS { get; set; }
+        public Double Precio { get; set; }
+        public Double PrecioOferta { get; set; }
+        public Double Costo { get; set; }
+        public Double PrecioLista { get; set; }
+        public Double xMayor1 { get; set; }
+        public Double xMayor2 { get; set; }
+        public Double xMayor3 { get; set; }
+        public Double PrecioMinimo { get; set; }
+        public Double EnOferta { get; set; }
+        public int AreaID { get; set; }
+        public int DptoID { get; set; }
+        public int GrupoID { get; set; }
+        public String Area { get; set; }
+        public String Dpto { get; set; }
+        public String Grupo { get; set; }
+        public String Foto { get; set; }
+        public double Inventario { get; set; }
+        public Boolean Pesado { get; set; }
+        public double AddCantidad { get; set; }
+        public double quantity { get; set; }
+        public double Agregado { get; set; }
+
+        public string DescripcionLarga { get; set; }
+        public string CodigoJuntos { get; set; }
+        public string CodigoJuntos1 { get; set; }
+
+        public List<String> FotosAlterna { get; set; }
+        public List<Producto> ProductosLink { get; set; }
+        public Int64 Link { get; set; }
+
     }
 }
